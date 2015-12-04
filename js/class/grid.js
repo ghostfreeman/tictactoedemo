@@ -8,6 +8,46 @@
  * @constructor
  * @
  */
-function Grid(gridWidth, gridHeight) {
+function Grid(interfaceID) {
+  this.grid = [ [null, null, null], [null, null, null], [null, null, null] ];
+  this.interfaceId = typeof interfaceID !== 'undefined' ? interfaceID : "grid1";
+}
+
+/**
+ * Alters the content of a Grid cell to any character passed through to it.
+ * @param
+ * @param
+ */
+Grid.prototype.alterGridCell = function(cell, character) {
+
+}
+
+/**
+ * Gets the content of a grid cell.
+ */
+Grid.prototype.getGridCell = function(cell, character) {
+
+}
+
+/**
+ * Claim a Grid cell. Return true if claimed without issue, return false if the
+ * cell is already claimed (the program should then re-run this method with a
+ * new cell request)
+ */
+Grid.prototype.claimCell = function(cell, character) {
+
+}
+
+/**
+ * Gets all the grid cells
+ */
+Grid.prototype.returnAllCells = function(cell, character) {
+
+}
+
+/**
+ * Redraw active cell element in the DOM
+ */
+Grid.prototype.redrawCell = function(cell, character) {
 
 }
