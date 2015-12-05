@@ -3,7 +3,7 @@
 ## Main Logic
 Based on the requirements, we are not supposed to have a situation where the player cannot win the game, the computer must always win the game.
 
-There are two possible approaches to assure a condition where the Human player loses: By forcing a draw by occupying all empty spaces (not necessarily a victory), or by winning by getting a sequence of three. In the latter case, the Minimax algorithm [1][2]
+There are two possible approaches to assure a condition where the Human player loses: By forcing a draw by occupying all empty spaces (not necessarily a victory), or by winning by getting a sequence of three. In the latter case, the Minimax algorithm [1](https://web.stanford.edu/~msirota/soco/minimax.html) [2](http://neverstopbuilding.com/minimax) provides a trivial and quick mechanism for the AI to determine potential grid locations to place its own symbols, and to secure victory.
 
 ## Monitoring grid for victory conditions
 TBD
