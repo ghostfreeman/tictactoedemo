@@ -42,3 +42,10 @@ AI.prototype.selectRandomSpace = function() {
     turn_complete = GridObj.claimCell(cell_coord, "X");
   } while (!turn_complete);
 }
+
+/**
+ * Computer makes an educated choice on a space to claim.
+ */
+AI.prototype.selectBestSpace = function() {
+
+}
