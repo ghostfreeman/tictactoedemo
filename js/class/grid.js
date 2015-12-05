@@ -9,7 +9,17 @@
  * @
  */
 function Grid(interfaceID) {
-  this.grid = [ [null, null, null], [null, null, null], [null, null, null] ];
+  this.grid = [
+    {"key": TL, "value": null},
+    {"key": TC, "value": null},
+    {"key": TR, "value": null},
+    {"key": CL, "value": null},
+    {"key": CC, "value": null},
+    {"key": CR, "value": null},
+    {"key": BL, "value": null},
+    {"key": BC, "value": null},
+    {"key": BR, "value": null},
+  ];
   this.interfaceId = typeof interfaceID !== 'undefined' ? interfaceID : "grid1";
 }
 
@@ -49,5 +59,19 @@ Grid.prototype.returnAllCells = function(cell, character) {
  * Redraw active cell element in the DOM
  */
 Grid.prototype.redrawCell = function(cell, character) {
+
+}
+
+/**
+ * Clear the Grid Cell. Typically not used during gameplay
+ */
+Grid.prototype.clearCell = function(cell, character) {
+
+}
+
+/**
+ * Reset the grid.
+ */
+Grid.prototype.resetGrid = function() {
 
 }
