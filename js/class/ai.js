@@ -9,7 +9,7 @@
  * @
  */
 function AI(playerCharacter) {
-  this.playerCharacter = this.length = typeof playerCharacter !== 'undefined' ? playerCharacter : "X";
+  this.playerCharacter = typeof playerCharacter !== 'undefined' ? playerCharacter : "X";
   this.grid = [];
 }
 
