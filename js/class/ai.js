@@ -14,9 +14,11 @@ function AI(playerCharacter) {
 }
 
 /**
- * Determine if the player's last move warrants a potential win condition, and
- * if so, places an opposing character to prevent it. Otherwise, place an
- * opposing character in a random location
+ * Computer makes an educated choice on a space to claim, and then after determining
+ * which potential move to make, selects it based on highest possible outcome for
+ * victory. The Minimax algorithm is used to calculate the essential space to play at.
+ *
+ *
  */
 AI.prototype.detectPossibleWinConditions = function() {
 
@@ -44,7 +46,9 @@ AI.prototype.selectRandomSpace = function() {
 }
 
 /**
- * Computer makes an educated choice on a space to claim.
+ *
+ *
+ *
  */
 AI.prototype.selectBestSpace = function() {
 
