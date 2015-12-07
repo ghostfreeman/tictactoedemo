@@ -14,13 +14,15 @@ $(".cell").click(function(event) {
   if(grid.isCellOccupied($(event.target).data("cell-id"))) {
     // Do nothing
   } else {
-    //Claim it
+    //Claim it and draw cell
     grid.claimCell($(event.target).data("cell-id"), "X");
-    //Redraw grid
-
     //Hand off turn to next player
   }
 });
+
+/**
+ * Event: Throws when user clicks on the "new game option"
+ */
 
 /**
  * Event: Keyboard sequence (Konami Code) turns the game into a magical

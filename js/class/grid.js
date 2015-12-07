@@ -59,12 +59,12 @@ Grid.prototype.isCellOccupied = function(cell) {
  * new cell request)
  */
 Grid.prototype.claimCell = function(cell, character) {
-  //self = this;
-
   for (var i in this.grid) {
     if (cell == this.grid[i].key) {
-      if this.grid[i].value !== null {
+      if (this.grid[i].value === null) {
         this.grid[i].value = character;
+        $("#cell"+this.grid[i].key).html(character);
+        $("#cell"+this.grid[i].key).attr("data-cell-value", character);
         ret = true;
         break;
       } else {
@@ -74,15 +74,6 @@ Grid.prototype.claimCell = function(cell, character) {
   }
 
   return ret;
-}
-
-/**
- * Redraw the entire grid
- */
-Grid.prototype.redrawGrid = function() {
-  $(".grid div.cell").each(function(index, value) {
-    $(value).html()
-  });
 }
 
 /**
