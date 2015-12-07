@@ -80,7 +80,9 @@ Grid.prototype.claimCell = function(cell, character) {
  * Redraw the entire grid
  */
 Grid.prototype.redrawGrid = function() {
-
+  $(".grid div.cell").each(function(index, value) {
+    $(value).html()
+  });
 }
 
 /**
