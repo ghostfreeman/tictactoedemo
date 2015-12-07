@@ -10,33 +10,47 @@
  */
 function Grid(interfaceID) {
   this.grid = [
-    {"key": TL, "value": null},
-    {"key": TC, "value": null},
-    {"key": TR, "value": null},
-    {"key": CL, "value": null},
-    {"key": CC, "value": null},
-    {"key": CR, "value": null},
-    {"key": BL, "value": null},
-    {"key": BC, "value": null},
-    {"key": BR, "value": null},
+    {"key": "TL", "value": null},
+    {"key": "TC", "value": null},
+    {"key": "TR", "value": null},
+    {"key": "CL", "value": null},
+    {"key": "CC", "value": null},
+    {"key": "CR", "value": null},
+    {"key": "BL", "value": null},
+    {"key": 'BC', "value": null},
+    {"key": "BR", "value": null},
   ];
-  this.interfaceId = typeof interfaceID !== 'undefined' ? interfaceID : "grid1";
-}
-
-/**
- * Alters the content of a Grid cell to any character passed through to it.
- * @param
- * @param
- */
-Grid.prototype.alterGridCell = function(cell, character) {
-
+  this.interfaceId = typeof interfaceID !== 'undefined' ? interfaceID : "grid";
 }
 
 /**
  * Gets the content of a grid cell.
  */
-Grid.prototype.getGridCell = function(cell, character) {
+Grid.prototype.getGridCell = function(cell) {
+  // look up cell in grid based on position
 
+}
+
+/**
+ * Returns if cell is occupied
+ */
+Grid.prototype.isCellOccupied = function(cell) {
+  //self = this;
+  ret = false;
+
+  // look up cell in grid based on position
+  for (var i in this.grid) {
+    if (cell == this.grid[i].key) {
+      if(this.grid[i].value !== null) {
+        ret = true;
+        break;
+      } else {
+        break;
+      }
+    }
+  }
+
+  return ret;
 }
 
 /**
@@ -45,33 +59,44 @@ Grid.prototype.getGridCell = function(cell, character) {
  * new cell request)
  */
 Grid.prototype.claimCell = function(cell, character) {
+  //self = this;
+
+  for (var i in this.grid) {
+    if (cell == this.grid[i].key) {
+      if this.grid[i].value !== null {
+        this.grid[i].value = character;
+        ret = true;
+        break;
+      } else {
+        break;
+      }
+    }
+  }
+
+  return ret;
+}
+
+/**
+ * Redraw the entire grid
+ */
+Grid.prototype.redrawGrid = function() {
 
 }
 
 /**
  * Gets all the grid cells
  */
-Grid.prototype.returnAllCells = function(cell, character) {
-
-}
-
-/**
- * Redraw active cell element in the DOM
- */
-Grid.prototype.redrawCell = function(cell, character) {
-
-}
-
-/**
- * Clear the Grid Cell. Typically not used during gameplay
- */
-Grid.prototype.clearCell = function(cell, character) {
-
+Grid.prototype.returnAllCells = function() {
+  return this.grid;
 }
 
 /**
  * Reset the grid.
  */
 Grid.prototype.resetGrid = function() {
-
+for (var i in this.grid) {
+    if (cell == this.grid[i].key) {
+      this.grid[i].value = null;
+    }
+  }
 }
