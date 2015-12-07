@@ -25,17 +25,26 @@ function Grid(interfaceID) {
 
 /**
  * Gets the content of a grid cell.
+ * @
  */
 Grid.prototype.getGridCell = function(cell) {
   // look up cell in grid based on position
+  ret = false;
 
+  // look up cell in grid based on position
+  for (var i in this.grid) {
+    if (cell == this.grid[i].key) {
+      ret = this.grid[i].value;
+    }
+  }
+
+  return ret;
 }
 
 /**
  * Returns if cell is occupied
  */
 Grid.prototype.isCellOccupied = function(cell) {
-  //self = this;
   ret = false;
 
   // look up cell in grid based on position

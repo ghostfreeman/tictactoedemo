@@ -2,7 +2,16 @@
  * Load in classes
  */
 var grid = new Grid("grid");
-var gameObj = new GameLogic();
+//var gameObj = new GameLogic();
+//var AIPlayer = new player()
+
+/**
+ * Event: Prompt the user to define his name and symbol. Event thrown on
+ * pageload
+ */
+$(document).ready(function(){
+
+});
 
 /**
  * Event: Throws when a user clicks on a Cell.
@@ -16,6 +25,8 @@ $(".cell").click(function(event) {
   } else {
     //Claim it and draw cell
     grid.claimCell($(event.target).data("cell-id"), "X");
+    //Check for victory condition
+
     //Hand off turn to next player
   }
 });
