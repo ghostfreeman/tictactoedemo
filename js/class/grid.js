@@ -35,6 +35,7 @@ Grid.prototype.getGridCell = function(cell) {
   for (var i in this.grid) {
     if (cell == this.grid[i].key) {
       ret = this.grid[i].value;
+      break;
     }
   }
 
