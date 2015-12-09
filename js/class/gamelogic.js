@@ -24,6 +24,7 @@ GameLogic.prototype.endTurn = function() {
  */
 GameLogic.prototype.endGame = function(grid, winningPlayer) {
   console.log("End Game");
+  console.debug("winningPlayer", winningPlayer);
   $("#victoryModal p span").html(winningPlayer.name);
   $("#victoryModal").modal('show');
 }

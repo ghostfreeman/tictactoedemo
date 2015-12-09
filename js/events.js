@@ -4,6 +4,7 @@
 var grid = new Grid("grid");
 //var gameObj = new GameLogic();
 //var AIPlayer = new player()
+var activePlayer = null;
 
 /**
  * Event: Prompt the user to define his name and symbol. Event thrown on
@@ -79,20 +80,25 @@ $("ModalRestartGame").click(function() {
  * Event: Throws when a user clicks on a Cell.
  */
 $(".cell").click(function(event) {
+  activePlayer = "humanPlayer";
+
   //Check if occupied
   if(grid.isCellOccupied($(event.target).data("cell-id"))) {
     // Do nothing
   } else {
     //Claim it and draw cell
     grid.claimCell($(event.target).data("cell-id"), humanPlayer.symbol);
+    var playerEval = eval(activePlayer);
     //Check for victory condition
     if(gameObj.checkForWin(grid, humanPlayer.symbol)) {
       //Victory, end game
       console.log("Game over");
-      gameObj.endGame(grid);
+      console.debug("playerEval", playerEval);
+      gameObj.endGame(grid, playerEval);
     } else {
       //AI gets its turn
-      gameObj.endTurn();
+      activePlayer = "AIPlayer";
+      gameObj.endTurn(grid);
     }
   }
 });
