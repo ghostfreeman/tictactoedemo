@@ -55,7 +55,7 @@ GameLogic.prototype.confirmVertColumnsMatchThree = function(grid, playerSymbol) 
   if(
     (TL == playerSymbol) &&
     (CL == playerSymbol) &&
-    (BL == playerSymbol) &&
+    (BL == playerSymbol)
   ) {
 
   }
@@ -64,7 +64,7 @@ GameLogic.prototype.confirmVertColumnsMatchThree = function(grid, playerSymbol) 
   if(
     (TC == playerSymbol) &&
     (CC == playerSymbol) &&
-    (BC == playerSymbol) &&
+    (BC == playerSymbol)
   ) {
 
   }
@@ -73,7 +73,7 @@ GameLogic.prototype.confirmVertColumnsMatchThree = function(grid, playerSymbol) 
   if(
     (TR == playerSymbol) &&
     (CR == playerSymbol) &&
-    (BR == playerSymbol) &&
+    (BR == playerSymbol)
   ) {
 
   }

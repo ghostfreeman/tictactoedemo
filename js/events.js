@@ -10,7 +10,21 @@ var grid = new Grid("grid");
  * pageload
  */
 $(document).ready(function(){
+  $('#InitModal').modal();
+});
 
+/**
+ * Event: User provides a name for their player profile in the modal.
+ */
+$("#InitModalProc").click(function(event) {
+  //Create new player object for the Human Player
+  var humanPlayer = new Player($('#playerName').val(), "X", true)
+
+  //Create new player object for the AI Player
+  var AIPlayer = new Player("Mr. Meeseeks", "X", true)
+
+  //Close modal and begin the game!
+  $('#InitModal').modal('hide');
 });
 
 /**

@@ -17,8 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <!-- Modal library -->
-    <script src="js/lib/jquery.modal.js" type="text/javascript"></script>
-    <link href="css/lib/jquery.modal.css" rel="stylesheet" type="text/css" />
+    <!--script src="js/lib/jquery.modal.min.js" type="text/javascript"></script-->
 
     <!-- Material Design Bootstrap -->
 
@@ -52,6 +51,26 @@
         <div class="col-md-4 cell cell-BL" data-cell-name="Bottom Left" data-cell-value="" data-cell-id="BL" id="cellBL"></div>
         <div class="col-md-4 cell cell-BC" data-cell-name="Bottom Center" data-cell-value="" data-cell-id="BC" id="cellBC"></div>
         <div class="col-md-4 cell cell-BR" data-cell-name="Bottom Right" data-cell-value="" data-cell-id="BR" id="cellBR"></div>
+      </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="InitModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">
+              Enter your name below
+            </h4>
+          </div>
+          <div class="modal-body">
+            <form action="#">
+              <input type="text" placeholder="Your Player Name" id="playerName" />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="InitModalProc" data-dismiss="modal">Save</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
