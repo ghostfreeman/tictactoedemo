@@ -5,7 +5,7 @@
 
 /**
  * Game Logic class
- * @cons"TR"uctor
+ * @constructor
  * @
  */
 function GameLogic() {
@@ -23,6 +23,7 @@ GameLogic.prototype.endTurn = function() {
  * Locks the grid, and ends the game
  */
 GameLogic.prototype.endGame = function(grid, winningPlayer) {
+  console.log("End Game");
   $("#victoryModal p span").html(winningPlayer.name);
   $("#victoryModal").modal('show');
 }
@@ -75,6 +76,9 @@ GameLogic.prototype.confirmVertColumnsMatchThree = function(grid, playerSymbol) 
     (BL == playerSymbol)
   ) {
     console.log("Victory column left");
+    return true;
+  } else {
+    //
   }
 
   //Center column (TC, CC, BC)
@@ -84,6 +88,9 @@ GameLogic.prototype.confirmVertColumnsMatchThree = function(grid, playerSymbol) 
     (BC == playerSymbol)
   ) {
     console.log("Victory column center");
+    return true;
+  } else {
+    //
   }
 
   //Right column (TR, CR, BR);
@@ -93,7 +100,12 @@ GameLogic.prototype.confirmVertColumnsMatchThree = function(grid, playerSymbol) 
     (BR == playerSymbol)
   ) {
     console.log("Victory column right");
+    return true;
+  } else {
+    //
   }
+
+  return false;
 }
 
 /**
@@ -117,6 +129,9 @@ GameLogic.prototype.confirmHorizRowMatchThree = function(grid, playerSymbol) {
     (TR == playerSymbol)
   ) {
     console.log("Victory top row");
+    return true;
+  } else {
+    //return false;
   }
 
   //Center Row (CL, CC, CR)
@@ -126,6 +141,9 @@ GameLogic.prototype.confirmHorizRowMatchThree = function(grid, playerSymbol) {
     (CR == playerSymbol)
   ) {
     console.log("Victory center row");
+    return true;
+  } else {
+    //return false;
   }
 
   //Bottom Row (BL, BC, BR)
@@ -135,7 +153,12 @@ GameLogic.prototype.confirmHorizRowMatchThree = function(grid, playerSymbol) {
     (BR == playerSymbol)
   ) {
     console.log("Victory center row");
+    return true;
+  } else {
+    //return false;
   }
+
+  return false;
 }
 
 /**

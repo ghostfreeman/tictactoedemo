@@ -49,7 +49,7 @@ $("#InitNewGame").click(function(event) {
  */
 $("#ForfeitGame").click(function(event) {
   $("#quitModal").modal('show');
-  gameObj.restartGame(); //TODO RestartGame()
+  gameObj.restartGame();
 });
 
 /**
@@ -63,9 +63,17 @@ $("#ModalIWillNotQuit").click(function() {
  * Event: User selects the "Quit Game" option
  */
 $("#ModalIGiveUp").click(function() {
-  //TODO RestartGame()
   $("quitModal").modal('hide');
-})
+  gameObj.restartGame();
+});
+
+/**
+ * Event: User starts a new game
+ */
+$("ModalRestartGame").click(function() {
+  //TODO Restart game
+  $("#victoryModal").modal('hide');
+});
 
 /**
  * Event: Throws when a user clicks on a Cell.
@@ -80,6 +88,7 @@ $(".cell").click(function(event) {
     //Check for victory condition
     if(gameObj.checkForWin(grid, humanPlayer.symbol)) {
       //Victory, end game
+      console.log("Game over");
       gameObj.endGame(grid);
     } else {
       //AI gets its turn
