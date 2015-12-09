@@ -5,7 +5,7 @@
 
 /**
  * Game Logic class
- * @constructor
+ * @cons"TR"uctor
  * @
  */
 function GameLogic() {
@@ -17,6 +17,13 @@ function GameLogic() {
  */
 GameLogic.prototype.endTurn = function() {
   console.log("AI Turn begins here");
+}
+
+/**
+ * Locks the grid, and ends the game
+ */
+GameLogic.prototype.endGame = function(grid) {
+  $("#victoryModal").modal('show');
 }
 
 /**
@@ -50,15 +57,15 @@ GameLogic.prototype.confirmGridNotEmpty = function() {
  * Checks to see if any vertical column has a matching 3 sequence
  */
 GameLogic.prototype.confirmVertColumnsMatchThree = function(grid, playerSymbol) {
-  var TL = grid.getGridCell(TL);
-  var TC = grid.getGridCell(TC);
-  var TR = grid.getGridCell(TR);
-  var CL = grid.getGridCell(CL);
-  var CC = grid.getGridCell(CC);
-  var CR = grid.getGridCell(CR);
-  var BR = grid.getGridCell(BR);
-  var BC = grid.getGridCell(BC);
-  var BL = grid.getGridCell(BL);
+  var TL = grid.getGridCell("TL");
+  var TC = grid.getGridCell("TC");
+  var TR = grid.getGridCell("TR");
+  var CL = grid.getGridCell("CL");
+  var CC = grid.getGridCell("CC");
+  var CR = grid.getGridCell("CR");
+  var BR = grid.getGridCell("BR");
+  var BC = grid.getGridCell("BC");
+  var BL = grid.getGridCell("BL");
 
   //Left column (TL, CL, BL)
   if(
@@ -66,7 +73,7 @@ GameLogic.prototype.confirmVertColumnsMatchThree = function(grid, playerSymbol) 
     (CL == playerSymbol) &&
     (BL == playerSymbol)
   ) {
-
+    console.log("Victory column left");
   }
 
   //Center column (TC, CC, BC)
@@ -75,7 +82,7 @@ GameLogic.prototype.confirmVertColumnsMatchThree = function(grid, playerSymbol) 
     (CC == playerSymbol) &&
     (BC == playerSymbol)
   ) {
-
+    console.log("Victory column center");
   }
 
   //Right column (TR, CR, BR);
@@ -84,7 +91,7 @@ GameLogic.prototype.confirmVertColumnsMatchThree = function(grid, playerSymbol) 
     (CR == playerSymbol) &&
     (BR == playerSymbol)
   ) {
-
+    console.log("Victory column right");
   }
 }
 
@@ -92,15 +99,15 @@ GameLogic.prototype.confirmVertColumnsMatchThree = function(grid, playerSymbol) 
  * Checks to see if any horizontal row has a matching 3 sequence
  */
 GameLogic.prototype.confirmHorizRowMatchThree = function(grid, playerSymbol) {
-  var TL = grid.getGridCell(TL);
-  var TC = grid.getGridCell(TC);
-  var TR = grid.getGridCell(TR);
-  var CL = grid.getGridCell(CL);
-  var CC = grid.getGridCell(CC);
-  var CR = grid.getGridCell(CR);
-  var BR = grid.getGridCell(BR);
-  var BC = grid.getGridCell(BC);
-  var BL = grid.getGridCell(BL);
+  var TL = grid.getGridCell("TL");
+  var TC = grid.getGridCell("TC");
+  var TR = grid.getGridCell("TR");
+  var CL = grid.getGridCell("CL");
+  var CC = grid.getGridCell("CC");
+  var CR = grid.getGridCell("CR");
+  var BR = grid.getGridCell("BR");
+  var BC = grid.getGridCell("BC");
+  var BL = grid.getGridCell("BL");
 
   //Top Row (TL, TC, TR)
   if(
@@ -108,7 +115,7 @@ GameLogic.prototype.confirmHorizRowMatchThree = function(grid, playerSymbol) {
     (TC == playerSymbol) &&
     (TR == playerSymbol)
   ) {
-
+    console.log("Victory top row");
   }
 
   //Center Row (CL, CC, CR)
@@ -116,7 +123,9 @@ GameLogic.prototype.confirmHorizRowMatchThree = function(grid, playerSymbol) {
     (CL == playerSymbol) &&
     (CC == playerSymbol) &&
     (CR == playerSymbol)
-  ) {}
+  ) {
+    console.log("Victory center row");
+  }
 
   //Botom Row (BL, BC, BR)
   if(
@@ -124,7 +133,7 @@ GameLogic.prototype.confirmHorizRowMatchThree = function(grid, playerSymbol) {
     (BC == playerSymbol) &&
     (BR == playerSymbol)
   ) {
-
+    console.log("Victory center row");
   }
 }
 
@@ -132,11 +141,11 @@ GameLogic.prototype.confirmHorizRowMatchThree = function(grid, playerSymbol) {
  * Checks to see if any diagonal segment has a matching 3 sequence
  */
 GameLogic.prototype.confirmDiagSegMatchThree = function(grid, playerSymbol) {
-  var TL = grid.getGridCell(TL);
-  var TR = grid.getGridCell(TR);
-  var CC = grid.getGridCell(CC);
-  var BR = grid.getGridCell(BR);
-  var BL = grid.getGridCell(BL);
+  var TL = grid.getGridCell("TL");
+  var TR = grid.getGridCell("TR");
+  var CC = grid.getGridCell("CC");
+  var BR = grid.getGridCell("BR");
+  var BL = grid.getGridCell("BL");
 
   //TL, CC, BR
   if(
@@ -144,6 +153,7 @@ GameLogic.prototype.confirmDiagSegMatchThree = function(grid, playerSymbol) {
     (CC == playerSymbol) &&
     (BR == playerSymbol)
   ) {
+    console.log("Victory Diag Right");
     return true;
   } else {
     return false;
@@ -155,6 +165,7 @@ GameLogic.prototype.confirmDiagSegMatchThree = function(grid, playerSymbol) {
     (CC == playerSymbol) &&
     (BL == playerSymbol)
   ) {
+    console.log("Victory Diag Left");
     return true;
   } else {
     return false;

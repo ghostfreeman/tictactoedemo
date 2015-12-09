@@ -63,6 +63,7 @@ $(".cell").click(function(event) {
     //Check for victory condition
     if(gameObj.checkForWin(grid, humanPlayer.symbol)) {
       //Victory, end game
+      gameObj.endGame(grid);
     } else {
       //AI gets its turn
       gameObj.endTurn();

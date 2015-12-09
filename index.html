@@ -16,11 +16,6 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-    <!-- Modal library -->
-    <!--script src="js/lib/jquery.modal.min.js" type="text/javascript"></script-->
-
-    <!-- Material Design Bootstrap -->
-
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -32,25 +27,33 @@
       <div class="playersWrapper">
 
       </div>
+
+      <div id="grid" class="grid">
+        <div class="col-md-12 row row-top" data-row-name="Top" data-row-id="T">
+          <div class="col-md-4 cell cell-TL" data-cell-name="Top Left" data-cell-value="" data-cell-id="TL" id="cellTL"></div>
+          <div class="col-md-4 cell cell-TC" data-cell-name="Top Center" data-cell-value="" data-cell-id="TC" id="cellTC"></div>
+          <div class="col-md-4 cell cell-TR" data-cell-name="Top Right" data-cell-value="" data-cell-id="TR" id="cellTR"></div>
+        </div>
+
+        <div class="col-md-12 row row-center" data-row-name="Center" data-row-id="C">
+          <div class="col-md-4 cell cell-CL" data-cell-name="Center Left" data-cell-value="" data-cell-id="CL" id="cellCL"></div>
+          <div class="col-md-4 cell cell-CC" data-cell-name="Center Center" data-cell-value="" data-cell-id="CC" id="cellCC"></div>
+          <div class="col-md-4 cell cell-CR" data-cell-name="Center Right" data-cell-value="" data-cell-id="CR" id="cellCR"></div>
+        </div>
+
+        <div class="col-md-12 row row-bottom" data-row-name="Bottom" data-row-id="B">
+          <div class="col-md-4 cell cell-BL" data-cell-name="Bottom Left" data-cell-value="" data-cell-id="BL" id="cellBL"></div>
+          <div class="col-md-4 cell cell-BC" data-cell-name="Bottom Center" data-cell-value="" data-cell-id="BC" id="cellBC"></div>
+          <div class="col-md-4 cell cell-BR" data-cell-name="Bottom Right" data-cell-value="" data-cell-id="BR" id="cellBR"></div>
+        </div>
+      </div>
     </div>
 
-    <div id="grid" class="grid">
-      <div class="col-md-12 row row-top" data-row-name="Top" data-row-id="T">
-        <div class="col-md-4 cell cell-TL" data-cell-name="Top Left" data-cell-value="" data-cell-id="TL" id="cellTL"></div>
-        <div class="col-md-4 cell cell-TC" data-cell-name="Top Center" data-cell-value="" data-cell-id="TC" id="cellTC"></div>
-        <div class="col-md-4 cell cell-TR" data-cell-name="Top Right" data-cell-value="" data-cell-id="TR" id="cellTR"></div>
-      </div>
+    <div class="victorybox modal fade" tabindex="-1" id="victoryModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-      <div class="col-md-12 row row-center" data-row-name="Center" data-row-id="C">
-        <div class="col-md-4 cell cell-CL" data-cell-name="Center Left" data-cell-value="" data-cell-id="CL" id="cellCL"></div>
-        <div class="col-md-4 cell cell-CC" data-cell-name="Center Center" data-cell-value="" data-cell-id="CC" id="cellCC"></div>
-        <div class="col-md-4 cell cell-CR" data-cell-name="Center Right" data-cell-value="" data-cell-id="CR" id="cellCR"></div>
-      </div>
-
-      <div class="col-md-12 row row-bottom" data-row-name="Bottom" data-row-id="B">
-        <div class="col-md-4 cell cell-BL" data-cell-name="Bottom Left" data-cell-value="" data-cell-id="BL" id="cellBL"></div>
-        <div class="col-md-4 cell cell-BC" data-cell-name="Bottom Center" data-cell-value="" data-cell-id="BC" id="cellBC"></div>
-        <div class="col-md-4 cell cell-BR" data-cell-name="Bottom Right" data-cell-value="" data-cell-id="BR" id="cellBR"></div>
+        </div>
       </div>
     </div>
 
@@ -64,7 +67,7 @@
           </div>
           <div class="modal-body">
             <form action="#">
-              <input type="text" placeholder="Your Player Name" id="playerName" />
+              <input type="text" placeholder="Your Player Name" id="playerName" class='form-control' />
               <select class="form-control" id="playerSymbol">
                 <option value="X">X</option>
                 <option value="O" selected>O</option>
