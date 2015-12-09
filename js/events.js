@@ -73,7 +73,10 @@ $("#ModalIGiveUp").click(function() {
  */
 $("ModalRestartGame").click(function() {
   //TODO Restart game
+  grid.resetGrid();
+  activePlayer = null;
   $("#victoryModal").modal('hide');
+  $('#InitModal').modal('show');
 });
 
 /**
@@ -92,8 +95,6 @@ $(".cell").click(function(event) {
     //Check for victory condition
     if(gameObj.checkForWin(grid, humanPlayer.symbol)) {
       //Victory, end game
-      console.log("Game over");
-      console.debug("playerEval", playerEval);
       gameObj.endGame(grid, playerEval);
     } else {
       //AI gets its turn

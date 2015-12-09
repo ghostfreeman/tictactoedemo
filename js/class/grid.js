@@ -97,9 +97,14 @@ Grid.prototype.returnAllCells = function() {
  * Reset the grid.
  */
 Grid.prototype.resetGrid = function() {
-for (var i in this.grid) {
+  for (var i in this.grid) {
     if (cell == this.grid[i].key) {
       this.grid[i].value = null;
     }
   }
+
+  $("#"+this.interfaceId+" .cell").each(function(index, value) {
+    value.html("");
+    value.attr("data-cell-value","");
+  });
 }
