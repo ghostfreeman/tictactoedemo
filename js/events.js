@@ -32,6 +32,7 @@ $("#InitModalProc").click(function(event) {
 
   //Close modal and start the game!
   gameObj = new GameLogic();
+  $("#ForfeitGame").toggle();
   $('#InitModal').modal('hide');
 });
 
@@ -46,9 +47,25 @@ $("#InitNewGame").click(function(event) {
 /**
  * Event: User selects the "Forfeit game" option.
  */
-$("#ForfeitActiveGame").click(function(event) {
-
+$("#ForfeitGame").click(function(event) {
+  $("#quitModal").modal('show');
+  gameObj.restartGame(); //TODO RestartGame()
 });
+
+/**
+ * Event: User selects the "Return to game" option
+ */
+$("#ModalIWillNotQuit").click(function() {
+  $("#quitModal").modal('hide');
+});
+
+/**
+ * Event: User selects the "Quit Game" option
+ */
+$("#ModalIGiveUp").click(function() {
+  //TODO RestartGame()
+  $("quitModal").modal('hide');
+})
 
 /**
  * Event: Throws when a user clicks on a Cell.

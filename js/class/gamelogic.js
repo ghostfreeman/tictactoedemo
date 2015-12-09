@@ -22,7 +22,8 @@ GameLogic.prototype.endTurn = function() {
 /**
  * Locks the grid, and ends the game
  */
-GameLogic.prototype.endGame = function(grid) {
+GameLogic.prototype.endGame = function(grid, winningPlayer) {
+  $("#victoryModal p span").html(winningPlayer.name);
   $("#victoryModal").modal('show');
 }
 
@@ -127,7 +128,7 @@ GameLogic.prototype.confirmHorizRowMatchThree = function(grid, playerSymbol) {
     console.log("Victory center row");
   }
 
-  //Botom Row (BL, BC, BR)
+  //Bottom Row (BL, BC, BR)
   if(
     (BL == playerSymbol) &&
     (BC == playerSymbol) &&
