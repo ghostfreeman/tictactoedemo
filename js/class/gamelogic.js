@@ -16,7 +16,7 @@ function GameLogic() {
  * Ends a turn
  */
 GameLogic.prototype.endTurn = function() {
-
+  console.log("AI Turn begins here");
 }
 
 /**
@@ -27,7 +27,16 @@ GameLogic.prototype.endTurn = function() {
  * * Checking to see if any space is no longer empty
  */
 GameLogic.prototype.checkForWin = function(grid, playerSymbol) {
-
+  if(this.confirmVertColumnsMatchThree(grid, playerSymbol) ||
+     this.confirmHorizRowMatchThree(grid, playerSymbol) ||
+     this.confirmDiagSegMatchThree(grid, playerSymbol)
+  ) {
+    //Victory condition
+    return true;
+  } else {
+    //Do Nothing
+    return false;
+  }
 }
 
 /**
@@ -135,7 +144,9 @@ GameLogic.prototype.confirmDiagSegMatchThree = function(grid, playerSymbol) {
     (CC == playerSymbol) &&
     (BR == playerSymbol)
   ) {
-
+    return true;
+  } else {
+    return false;
   }
 
   //TR, CC, BL
@@ -144,6 +155,8 @@ GameLogic.prototype.confirmDiagSegMatchThree = function(grid, playerSymbol) {
     (CC == playerSymbol) &&
     (BL == playerSymbol)
   ) {
-    //Match three diag left
+    return true;
+  } else {
+    return false;
   }
 }

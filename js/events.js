@@ -31,8 +31,23 @@ $("#InitModalProc").click(function(event) {
   AIPlayer = new Player("Mr. Meeseeks", AISymbol, false);
 
   //Close modal and start the game!
-  //var gameObj = new GameLogic();
+  gameObj = new GameLogic();
   $('#InitModal').modal('hide');
+});
+
+/**
+ * Event: User selects to start a new game. Event thrown when user chooses to start
+ * a new game after the last game ends
+ */
+$("#InitNewGame").click(function(event) {
+  $('#InitModal').modal('show');
+});
+
+/**
+ * Event: User selects the "Forfeit game" option.
+ */
+$("#ForfeitActiveGame").click(function(event) {
+
 });
 
 /**
@@ -44,16 +59,16 @@ $(".cell").click(function(event) {
     // Do nothing
   } else {
     //Claim it and draw cell
-    grid.claimCell($(event.target).data("cell-id"), "X");
+    grid.claimCell($(event.target).data("cell-id"), humanPlayer.symbol);
     //Check for victory condition
-
-    //Hand off turn to next player
+    if(gameObj.checkForWin(grid, humanPlayer.symbol)) {
+      //Victory, end game
+    } else {
+      //AI gets its turn
+      gameObj.endTurn();
+    }
   }
 });
-
-/**
- * Event: Throws when user clicks on the "new game option"
- */
 
 /**
  * Event: Keyboard sequence (Konami Code) turns the game into a magical
