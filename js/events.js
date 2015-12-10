@@ -30,6 +30,7 @@ $("#InitModalProc").click(function(event) {
   }
 
   AIPlayer = new Player("Mr. Meeseeks", AISymbol, false);
+  AISystem = new AI(AIPlayer.symbol);
 
   //Close modal and start the game!
   gameObj = new GameLogic();
@@ -98,6 +99,7 @@ $(".cell").click(function(event) {
       gameObj.endGame(grid, playerEval);
     } else {
       //AI gets its turn
+      AISystem.detectPossibleWinConditions(grid, gameObj);
       activePlayer = "AIPlayer";
       gameObj.endTurn(grid);
     }

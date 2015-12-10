@@ -21,10 +21,17 @@ Minimax.prototype.minimaxCalc = function() {
 /**
  * Recursive tree builder
  */
-Minimax.prototype.BuildGameTree = function() {
+Minimax.prototype.BuildGameTree = function(gamegrid) {
   if(depth > this.MAXDEPTH) {
     return 0;
   }
+
+}
+
+/**
+ * Score processing algorithm
+ */
+Minimax.prototype.getScore = function() {
 
 }
 
