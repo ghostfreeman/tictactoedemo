@@ -97,14 +97,14 @@ Grid.prototype.returnAllCells = function() {
  * Reset the grid.
  */
 Grid.prototype.resetGrid = function() {
+  var interfaceID = this.interfaceId;
+
   for (var i in this.grid) {
-    if (cell == this.grid[i].key) {
-      this.grid[i].value = null;
-    }
+    this.grid[i].value = null;
   }
 
-  $("#"+this.interfaceId+" .cell").each(function(index, value) {
-    value.html("");
-    value.attr("data-cell-value","");
+  $("#"+interfaceID+" .cell").each(function(index, value) {
+    $(this).html("");
+    $(this).attr("data-cell-value","");
   });
 }

@@ -71,7 +71,7 @@ $("#ModalIGiveUp").click(function() {
 /**
  * Event: User starts a new game
  */
-$("ModalRestartGame").click(function() {
+$("#ModalRestartGame").click(function() {
   //TODO Restart game
   grid.resetGrid();
   activePlayer = null;
