@@ -22,6 +22,9 @@ Minimax.prototype.minimaxCalc = function() {
  * Recursive tree builder
  */
 Minimax.prototype.BuildGameTree = function() {
+  if(depth > this.MAXDEPTH) {
+    return 0;
+  }
 
 }
 
